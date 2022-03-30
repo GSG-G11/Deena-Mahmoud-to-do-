@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AddItems from './components/AddItems/AddItems';
 import TodoItems from './components/ListToDoNote';
-
+import './App.css'
 class App extends Component {
   state = {
     items: [
@@ -33,14 +33,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>todo app</p>
+
+        <h1>What's the Plan for Today?</h1>
+        <AddItems addItem={this.addItem} />
+
         <TodoItems
           items={this.state.items}
           deleteItem={this.deleteItem}
           isCompleted={this.isCompleted}
           lineThrough={this.state.complete}
         />
-        <AddItems addItem={this.addItem} />
       </div>
     );
   }
