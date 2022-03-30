@@ -5,14 +5,14 @@ import TodoItems from "./components/ListToDoNote";
 class  App extends Component{
   state = {
     items: [
-      { id: 1, note: "Deena",  complete:false },
-      { id: 2, note: "sereen",complete:false  },
-      { id: 3, note: "text", complete:false  },
+      { id: 0, note: "Deena",  complete:false },
+      { id: 1, note: "sereen",complete:false  },
+      { id: 2, note: "text", complete:false  },
     ],
   };
   addItem = (item) => {
     let { items } = this.state;
-    item.id = this.state.items[items.length - 1].id + 1;
+    item.id = this.state.items[items.length - 1].id ;
     items.push(item);
     this.setState(items);
   }; 
@@ -22,10 +22,14 @@ class  App extends Component{
     this.setState({ items });
   };
 
-  isCompleted = () => {
-    let isDone=!this.state.complete;
-    this.setState({complete: isDone});
+  isCompleted = (id) => {
+    this.setState((prev) => {
+      prev.items[id].complete = true;
+      console.log(prev.items[id]);
+      return prev;
+    })
   }
+
   render() {
   return (
     <div className="App">

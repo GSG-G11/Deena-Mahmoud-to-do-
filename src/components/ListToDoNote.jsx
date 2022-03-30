@@ -3,17 +3,20 @@ const TodoItems = (props) => {
   const { items, deleteItem, isCompleted, lineThrough } = props;
   const ListItems = items.length ? (
     items.map((item) => {
+      // console.log(item.complete);
+
       return (
         <div key={item.id}>
           <span
             onClick={() => {
+              // console.log(isCompleted(1));
               isCompleted(item.id);
             }}
             style={{
-              textDecorationLines: lineThrough ? "line-through " : "none",
+              textDecoration: item.complete ? "line-through " : "none",
+              color: item.complete ? "red " : "black",
             }}
           >
-            {/* {console.log(item.complete)} */}
             {item.note}
           </span>
 
