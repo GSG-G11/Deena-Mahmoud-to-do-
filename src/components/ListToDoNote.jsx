@@ -1,7 +1,7 @@
 import React from "react";
 import "./ListToDoNote.css";
 const TodoItems = (props) => {
-  const { items, deleteItem, isCompleted, lineThrough } = props;
+  const { items, deleteItem, isCompleted } = props;
   const ListItems = items.length ? (
     items.map((item) => {
       // console.log(item.complete);
