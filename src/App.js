@@ -1,8 +1,8 @@
-import React,{ Component } from "react";
-import AddItems from "./components/AddItems/AddItems";
-import TodoItems from "./components/ListToDoNote";
+import React, { Component } from 'react';
+import AddItems from './components/AddItems/AddItems';
+import TodoItems from './components/ListToDoNote';
 
-class  App extends Component{
+class App extends Component {
   state = {
     items: [
       { id: 0, note: "Deena",  complete:false },
@@ -15,7 +15,7 @@ class  App extends Component{
     item.id = this.state.items[items.length - 1].id ;
     items.push(item);
     this.setState(items);
-  }; 
+  };
 
   deleteItem = (id) => {
     let items = this.state.items.filter((item) => item.id !== id);
@@ -31,13 +31,18 @@ class  App extends Component{
   }
 
   render() {
-  return (
-    <div className="App">
+    return (
+      <div className="App">
         <p>todo app</p>
-        <TodoItems items={this.state.items} deleteItem={this.deleteItem} isCompleted={this.isCompleted}  lineThrough={this.state.items}/>
-        <AddItems addItem ={this.addItem} />
-    </div>
-  );
+        <TodoItems
+          items={this.state.items}
+          deleteItem={this.deleteItem}
+          isCompleted={this.isCompleted}
+          lineThrough={this.state.complete}
+        />
+        <AddItems addItem={this.addItem} />
+      </div>
+    );
   }
 }
 

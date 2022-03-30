@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 const TodoItems = (props) => {
   const { items, deleteItem, isCompleted, lineThrough } = props;
   const ListItems = items.length ? (
@@ -8,6 +8,7 @@ const TodoItems = (props) => {
       return (
         <div key={item.id}>
           <span
+            id={item.id}
             onClick={() => {
               // console.log(isCompleted(1));
               isCompleted(item.id);
@@ -17,6 +18,7 @@ const TodoItems = (props) => {
               color: item.complete ? "red " : "black",
             }}
           >
+            {/* {console.log(lineThrough)} */}
             {item.note}
           </span>
 
