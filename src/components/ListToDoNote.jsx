@@ -30,7 +30,7 @@ const TodoItems = (props) => {
       );
     })
   ) : (
-    <p>there is no item to show</p>
+    <p className="empty-note">there is no item to show</p>
   );
   return <div className="ListItems ">{ListItems}</div>;
 };
