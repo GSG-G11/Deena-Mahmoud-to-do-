@@ -1,11 +1,12 @@
 import React from 'react';
+import  './ListToDoNote.css';
 const TodoItems = (props) => {
   const { items, deleteItem, isCompleted, lineThrough } = props;
   const ListItems = items.length ? (
     items.map((item) => {
       return (
-        <div key={item.id}>
-          <span
+        <div key={item.id} className="note" >
+          <span 
             id={item.id}
             onClick={() => {
               isCompleted(item.id);
@@ -18,7 +19,7 @@ const TodoItems = (props) => {
             {item.note}
           </span>
 
-          <button onClick={() => deleteItem(item.id)}>Delete</button>
+          <button className='delete' onClick={() => deleteItem(item.id)}><i class="fa fa-trash" aria-hidden="true"></i></button>
         </div>
       );
     })

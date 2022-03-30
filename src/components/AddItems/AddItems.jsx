@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './AddItems.css';
 class AddItems extends Component {
   state = {
     note: '',
@@ -18,16 +18,17 @@ class AddItems extends Component {
   };
   render() {
     return (
-      <div>
-        <form onSubmit={this.handelSubmit}>
+      <div className='form-container'>
+        <form  onSubmit={this.handelSubmit}>
           <input
             type="text"
             placeholder="Add Note ..."
+            className='todo-input'
             id="note"
             onChange={this.handleChange}
             value={this.state.note}
           />
-          <input type="submit" value="add" />
+          <input className='add' type="submit" value="add" />
         </form>
       </div>
     );
