@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import AddItems from './components/AddItems/AddItems';
 import TodoItems from './components/ListToDoNote';
-import './App.css'
+import './App.css';
 class App extends Component {
   state = {
     items: [
-      { id: 0, note: "Deena",  complete:false },
-      { id: 1, note: "sereen",complete:false  },
-      { id: 2, note: "text", complete:false  },
+      { id: 0, note: 'Deena', complete: false },
+      { id: 1, note: 'sereen', complete: false },
+      { id: 2, note: 'text', complete: false },
     ],
   };
   addItem = (item) => {
     let { items } = this.state;
-    item.id = this.state.items[items.length - 1].id ;
+    item.id = this.state.items[items.length - 1].id + 1 || 0;
+    item.complete = false;
     items.push(item);
     this.setState(items);
   };
@@ -27,13 +28,12 @@ class App extends Component {
       prev.items[id].complete = true;
       console.log(prev.items[id]);
       return prev;
-    })
-  }
+    });
+  };
 
   render() {
     return (
       <div className="App">
-
         <h1>What's the Plan for Today?</h1>
         <AddItems addItem={this.addItem} />
 
