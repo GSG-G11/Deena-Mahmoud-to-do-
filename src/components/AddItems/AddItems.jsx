@@ -3,6 +3,7 @@ import './AddItems.css';
 class AddItems extends Component {
   state = {
     note: '',
+    
   };
   handleChange = ({ target }) => {
     this.setState({
@@ -12,12 +13,14 @@ class AddItems extends Component {
   handelSubmit = (e) => {
     e.preventDefault();
     this.props.addItem(this.state);
+   
     this.setState({
       note: '',
+      
     });
   };
   render() {
-    console.log(this.state.note);
+  
     return (
       <div className="form-container">
         <form onSubmit={this.handelSubmit}>

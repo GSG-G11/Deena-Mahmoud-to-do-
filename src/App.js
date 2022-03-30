@@ -12,7 +12,7 @@ class App extends Component {
   };
   addItem = (item) => {
     let { items } = this.state;
-    item.id = this.state.items[items.length - 1].id + 1 || 0;
+    item.id = Date.now();
     item.complete = false;
     items.push(item);
     this.setState(items);
@@ -26,7 +26,7 @@ class App extends Component {
   isCompleted = (id) => {
     this.setState((prev) => {
       prev.items[id].complete = true;
-      console.log(prev.items[id]);
+   
       return prev;
     });
   };

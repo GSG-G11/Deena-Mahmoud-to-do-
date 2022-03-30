@@ -3,23 +3,23 @@ import "./ListToDoNote.css";
 const TodoItems = (props) => {
   const { items, deleteItem, isCompleted } = props;
   const ListItems = items.length ? (
-    items.map((item) => {
-      // console.log(item.complete);
+    items.map((item,index) => {
+     
 
       return (
         <div key={item.id} className="note">
           <span
             id={item.id}
             onClick={() => {
-              // console.log(isCompleted(1));
-              isCompleted(item.id);
+     
+              isCompleted(index);
             }}
             style={{
               textDecoration: item.complete ? "line-through " : "none",
               color: item.complete ? "red " : "black",
             }}
           >
-            {/* {console.log(lineThrough)} */}
+         
             {item.note}
           </span>
 
