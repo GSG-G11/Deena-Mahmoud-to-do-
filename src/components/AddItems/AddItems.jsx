@@ -23,7 +23,7 @@ class AddItems extends Component {
           <input
             type="text"
             placeholder="Add Note ..."
-            id="name"
+            id="note"
             onChange={this.handleChange}
             value={this.state.note}
           />

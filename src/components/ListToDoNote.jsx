@@ -1,14 +1,19 @@
-import React from 'react';
+import React from "react";
 const TodoItems = (props) => {
-  const { items, deleteItem, isCompleted,lineThrough } = props;
+  const { items, deleteItem, isCompleted, lineThrough } = props;
   const ListItems = items.length ? (
     items.map((item) => {
       return (
         <div key={item.id}>
           <span
-            onClick={() => isCompleted()}
-            style={{ textDecorationLines: lineThrough ? line - through : none }}
+            onClick={() => {
+              isCompleted(item.id);
+            }}
+            style={{
+              textDecorationLines: lineThrough ? "line-through " : "none",
+            }}
           >
+            {/* {console.log(item.complete)} */}
             {item.note}
           </span>
 
