@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 const TodoItems = (props) => {
   const { items, deleteItem, isCompleted, lineThrough } = props;
   const ListItems = items.length ? (
@@ -6,14 +6,15 @@ const TodoItems = (props) => {
       return (
         <div key={item.id}>
           <span
+            id={item.id}
             onClick={() => {
               isCompleted(item.id);
             }}
             style={{
-              textDecorationLines: lineThrough ? "line-through " : "none",
+              textDecorationLine: lineThrough ? 'line-through' : 'none',
             }}
           >
-            {/* {console.log(item.complete)} */}
+            {/* {console.log(lineThrough)} */}
             {item.note}
           </span>
 
