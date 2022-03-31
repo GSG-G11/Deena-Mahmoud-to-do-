@@ -12,6 +12,7 @@ class AddItems extends Component {
   handelSubmit = (e) => {
     e.preventDefault();
     this.props.addItem(this.state);
+
     this.setState({
       note: "",
     });

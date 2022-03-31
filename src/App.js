@@ -26,7 +26,6 @@ class App extends Component {
   isCompleted = (id) => {
     this.setState((prev) => {
       prev.items[id].complete = true;
-      console.log(prev.items[id]);
       return prev;
     });
   };
@@ -50,7 +49,6 @@ class App extends Component {
       <div className="App">
         <h1>What's the Plan for Today?</h1>
         <AddItems addItem={this.addItem} />
-
         <TodoItems
           items={this.state.items}
           deleteItem={this.deleteItem}
