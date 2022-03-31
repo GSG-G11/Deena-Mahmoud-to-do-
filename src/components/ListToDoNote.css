@@ -18,32 +18,31 @@
 
 .delete {
   background: rgb(36, 128, 248) 100%;
-color: white;
-  font-size: 20px;
-  border: none;
-margin: 0 10px;
-}
-
-.edit {
-  background: rgba(17, 122, 255, 1) 100%;
-color: white;
+  color: white;
   font-size: 20px;
   border: none;
   margin: 0 10px;
 }
 
-.empty-note{
-
-    color: white;
+.edit {
+  background: rgba(17, 122, 255, 1) 100%;
+  color: white;
+  font-size: 20px;
+  border: none;
+  margin: 0 10px;
 }
 
-.btn{
+.empty-note {
+  color: rgb(8, 8, 8);
+}
+
+.btn {
   display: flex;
   justify-content: flex-end;
   width: 60%;
 }
 
-.edit-form{
+.edit-form {
   display: flex;
   justify-content: center;
 }

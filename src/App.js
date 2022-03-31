@@ -5,9 +5,9 @@ import './App.css';
 class App extends Component {
   state = {
     items: [
-      { id: 0, note: 'Deena', complete: false, isEdit: false },
-      { id: 1, note: 'sereen', complete: false, isEdit: false  },
-      { id: 2, note: 'text', complete: false, isEdit: false  },
+      { id: 0, note: 'Shopping from market', complete: false, isEdit: false },
+      { id: 1, note: 'Revision  react subjects', complete: false, isEdit: false  },
+      { id: 2, note: 'Going to the gym', complete: false, isEdit: false  },
     ],
   };
   addItem = (item) => {
@@ -31,7 +31,6 @@ class App extends Component {
   };
   handleEdit = (e) => {
     e.preventDefault();
-    console.log(e.target.elements[0].value);
     this.setState((prev) => {
       return {items: prev.items.map((el) => {
         console.log(e.target.id);
