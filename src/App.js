@@ -12,7 +12,7 @@ class App extends Component {
   };
   addItem = (item) => {
     let { items } = this.state;
-    item.id = this.state.items.length ;
+    item.id = Date.now();
     item.complete = false;
     items.push(item);
     this.setState(items);
@@ -33,7 +33,7 @@ class App extends Component {
     e.preventDefault();
     this.setState((prev) => {
       return {items: prev.items.map((el) => {
-        console.log(e.target.id);
+        console.log(e.target.elements);
         // eslint-disable-next-line eqeqeq
         if(el.id == e.target.id){
           const updated = { id: el.id, note: e.target.elements[0].value , complete: el.complete, isEdit: el.isEdit }
