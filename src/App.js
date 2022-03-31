@@ -34,6 +34,8 @@ class App extends Component {
     console.log(e.target.elements[0].value);
     this.setState((prev) => {
       return {items: prev.items.map((el) => {
+        console.log(e.target.id);
+        // eslint-disable-next-line eqeqeq
         if(el.id == e.target.id){
           const updated = { id: el.id, note: e.target.elements[0].value , complete: el.complete, isEdit: el.isEdit }
           return updated;
