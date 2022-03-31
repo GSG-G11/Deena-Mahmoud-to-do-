@@ -5,14 +5,14 @@ import './App.css';
 class App extends Component {
   state = {
     items: [
-      { id: 0, note: 'Deena', complete: false },
-      { id: 1, note: 'sereen', complete: false },
-      { id: 2, note: 'text', complete: false },
+      { id: 0, note: 'Deena', complete: false, isEdit: false },
+      { id: 1, note: 'sereen', complete: false, isEdit: false  },
+      { id: 2, note: 'text', complete: false, isEdit: false  },
     ],
   };
   addItem = (item) => {
     let { items } = this.state;
-    item.id = Date.now();
+    item.id = this.state.items.length ;
     item.complete = false;
     items.push(item);
     this.setState(items);
@@ -26,22 +26,36 @@ class App extends Component {
   isCompleted = (id) => {
     this.setState((prev) => {
       prev.items[id].complete = true;
-   
       return prev;
     });
   };
+  handleEdit = (e) => {
+    e.preventDefault();
+    console.log(e.target.elements[0].value);
+    this.setState((prev) => {
+      return {items: prev.items.map((el) => {
+        console.log(e.target.id);
+        // eslint-disable-next-line eqeqeq
+        if(el.id == e.target.id){
+          const updated = { id: el.id, note: e.target.elements[0].value , complete: el.complete, isEdit: el.isEdit }
+          return updated;
+        }else {
+          return el;
+        }
+      })}
+    })
+  }
 
   render() {
     return (
       <div className="App">
         <h1>What's the Plan for Today?</h1>
         <AddItems addItem={this.addItem} />
-
         <TodoItems
           items={this.state.items}
           deleteItem={this.deleteItem}
           isCompleted={this.isCompleted}
-          lineThrough={this.state.complete}
+          handleEdit ={this.handleEdit}
         />
       </div>
     );
