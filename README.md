@@ -2,7 +2,7 @@
 
 `To Do App` It is an application through which you can add, delete and modify notes, where you can find your todos to manage your life.
 
-### Demo : [Link](https://62453e93b19e1b0009052246--superb-gaufre-d1d7c7.netlify.app/)
+### Demo : [Link](https://624543b266a93d0008199f01--superb-gaufre-d1d7c7.netlify.app/)
 
 ---
 
