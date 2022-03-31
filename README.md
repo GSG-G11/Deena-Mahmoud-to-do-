@@ -47,3 +47,7 @@
 - Install all the packages you will need `npm i`.
 - Run in the terminal this command to open the server locally `npm start`.
 - Enjoy Contributing to the **toDo app** website
+
+## Team Member :
+- [Mahmoud AlDabba](https://github.com/MahmoudJD95)
+- [Deena Alghazali](https://github.com/DeenaAlghazali)
