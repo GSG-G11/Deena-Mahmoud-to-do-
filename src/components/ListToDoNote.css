@@ -17,12 +17,33 @@
 }
 
 .delete {
+  background: rgb(36, 128, 248) 100%;
+color: white;
+  font-size: 20px;
+  border: none;
+margin: 0 10px;
+}
+
+.edit {
   background: rgba(17, 122, 255, 1) 100%;
 color: white;
   font-size: 20px;
   border: none;
+  margin: 0 10px;
 }
+
 .empty-note{
 
     color: white;
+}
+
+.btn{
+  display: flex;
+  justify-content: flex-end;
+  width: 60%;
+}
+
+.edit-form{
+  display: flex;
+  justify-content: center;
 }

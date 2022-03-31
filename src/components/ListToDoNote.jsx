@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./ListToDoNote.css";
+import React, { Component } from 'react';
+import './ListToDoNote.css';
 
 class TodoItems extends Component {
   state = {
@@ -14,16 +14,16 @@ class TodoItems extends Component {
     return (
       <>
         {this.state.isEdit ? (
-          <form onSubmit={(e) => handleEdit(e)} id={this.state.id}>
+          <form className='edit-form' onSubmit={(e) => handleEdit(e)} id={this.state.id}>
             <input
               type="text"
-              placeholder="Add Note ..."
+              placeholder="Edit Note ..."
               className="todo-input"
               id="note"
               onChange={this.handleChange}
               value={this.state.note}
             />
-            <input className="add" type="submit" value="add" />
+            <input className="add" type="submit" value="Edit" />
           </form>
         ) : null}
         {items.length ? (
@@ -35,22 +35,25 @@ class TodoItems extends Component {
                   isCompleted(item.id);
                 }}
                 style={{
-                  textDecoration: item.complete ? "line-through " : "none",
-                  color: item.complete ? "red " : "black",
+                  textDecoration: item.complete ? 'line-through ' : 'none',
+                  color: item.complete ? 'red ' : 'black',
                 }}
               >
                 {item.note}
               </span>
-              <button className="delete" onClick={() => deleteItem(item.id)}>
-                <i className="fa fa-trash" aria-hidden="true"></i>
-              </button>
-              <button
-                className="delete"
-                id={item.id}
-                onClick={this.displayForm}
-              >
-                <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
-              </button>
+              <div className="btn">
+               
+                <button className="delete" onClick={() => deleteItem(item.id)}>
+                  <i className="fa fa-trash" aria-hidden="true"></i>
+                </button>
+                <button
+                  className="edit"
+                  id={item.id}
+                  onClick={this.displayForm}
+                >
+                  <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </button>
+              </div>
             </div>
           ))
         ) : (
