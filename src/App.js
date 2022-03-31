@@ -5,14 +5,14 @@ import './App.css';
 class App extends Component {
   state = {
     items: [
-      { id: 0, note: 'Deena', complete: false },
-      { id: 1, note: 'sereen', complete: false },
-      { id: 2, note: 'text', complete: false },
+      { id: 0, note: 'Deena', complete: false, isEdit: false },
+      { id: 1, note: 'sereen', complete: false, isEdit: false  },
+      { id: 2, note: 'text', complete: false, isEdit: false  },
     ],
   };
   addItem = (item) => {
     let { items } = this.state;
-    item.id = this.state.items[items.length - 1].id + 1 || 0;
+    item.id = this.state.items.length ;
     item.complete = false;
     items.push(item);
     this.setState(items);
@@ -30,6 +30,20 @@ class App extends Component {
       return prev;
     });
   };
+  handleEdit = (e) => {
+    e.preventDefault();
+    console.log(e.target.elements[0].value);
+    this.setState((prev) => {
+      return {items: prev.items.map((el) => {
+        if(el.id == e.target.id){
+          const updated = { id: el.id, note: e.target.elements[0].value , complete: el.complete, isEdit: el.isEdit }
+          return updated;
+        }else {
+          return el;
+        }
+      })}
+    })
+  }
 
   render() {
     return (
@@ -41,7 +55,7 @@ class App extends Component {
           items={this.state.items}
           deleteItem={this.deleteItem}
           isCompleted={this.isCompleted}
-          lineThrough={this.state.complete}
+          handleEdit ={this.handleEdit}
         />
       </div>
     );

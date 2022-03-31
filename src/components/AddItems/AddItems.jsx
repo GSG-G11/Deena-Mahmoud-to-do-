@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import './AddItems.css';
+import React, { Component } from "react";
+import "./AddItems.css";
 class AddItems extends Component {
   state = {
-    note: '',
+    note: "",
   };
   handleChange = ({ target }) => {
     this.setState({
@@ -13,11 +13,10 @@ class AddItems extends Component {
     e.preventDefault();
     this.props.addItem(this.state);
     this.setState({
-      note: '',
+      note: "",
     });
   };
   render() {
-    console.log(this.state.note);
     return (
       <div className="form-container">
         <form onSubmit={this.handelSubmit}>
