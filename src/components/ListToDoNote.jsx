@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './ListToDoNote.css';
+import React, { Component } from "react";
+import "./ListToDoNote.css";
 
 class TodoItems extends Component {
   state = {
@@ -14,7 +14,11 @@ class TodoItems extends Component {
     return (
       <>
         {this.state.isEdit ? (
-          <form className='edit-form' onSubmit={(e) => handleEdit(e)} id={this.state.id}>
+          <form
+            className="edit-form"
+            onSubmit={(e) => handleEdit(e)}
+            id={this.state.id}
+          >
             <input
               type="text"
               placeholder="Edit Note ..."
@@ -27,22 +31,21 @@ class TodoItems extends Component {
           </form>
         ) : null}
         {items.length ? (
-          items.map((item) => (
+          items.map((item, index) => (
             <div key={item.id} id={item.id} className="note">
               <span
-                id={item.id}
+                id={index}
                 onClick={() => {
-                  isCompleted(item.id);
+                  isCompleted(index);
                 }}
                 style={{
-                  textDecoration: item.complete ? 'line-through ' : 'none',
-                  color: item.complete ? 'red ' : 'black',
+                  textDecoration: item.complete ? "line-through " : "none",
+                  color: item.complete ? "red " : "black",
                 }}
               >
                 {item.note}
               </span>
               <div className="btn">
-               
                 <button className="delete" onClick={() => deleteItem(item.id)}>
                   <i className="fa fa-trash" aria-hidden="true"></i>
                 </button>
